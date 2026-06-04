@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title Case Converter</title>
+</head>
+<body>
+  <h2>Convert to Title Case</h2>
+  
+  <label for="userInput">Enter text:</label>
+  <input type="text" id="userInput" placeholder="Type something...">
+  <button onclick="convertToTitleCase()">Convert</button>
+  
+  <p><strong>Result:</strong> <span id="result"></span></p>
+
+  <script>
+    function convertToTitleCase() {
+      let input = document.getElementById("userInput").value;
+      
+      // Convert to Title Case
+      let titleCase = input.toLowerCase().replace(/\b\w/g, function(char) {
+        return char.toUpperCase();
+      });
+      
+      document.getElementById("result").textContent = titleCase;
+    }
+  </script>
+</body>
+</html>

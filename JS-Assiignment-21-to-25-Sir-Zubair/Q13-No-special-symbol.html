@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Username Validation</title>
+</head>
+<body>
+  <h2>Enter Username</h2>
+  
+  <input type="text" id="username" placeholder="Type your username">
+  <button onclick="validateUsername()">Submit</button>
+  
+  <p id="result"></p>
+
+  <script>
+    function validateUsername() {
+      let username = document.getElementById("username").value;
+      let isValid = true;
+
+      for (let i = 0; i < username.length; i++) {
+        let charCode = username.charCodeAt(i);
+
+       
+        if (charCode === 33 || charCode === 44 || charCode === 46 || charCode === 64) {
+          isValid = false;
+          break;
+        }
+      }
+
+      if (isValid) {
+        document.getElementById("result").textContent = "Valid Username: " + username;
+      } else {
+        alert("Please enter a valid username (no @ . , ! allowed)");
+      }
+    }
+  </script>
+</body>
+</html>

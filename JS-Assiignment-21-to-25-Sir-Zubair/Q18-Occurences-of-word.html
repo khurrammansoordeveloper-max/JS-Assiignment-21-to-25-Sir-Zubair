@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Occurrences of Word</title>
+</head>
+<body>
+    <h1>Occurrences of Word</h1>
+    <script>
+
+        
+        var text = prompt("Enter some text:");
+        var word = prompt("Enter a word to search for:");
+        var count = 0;
+        var index = 0;
+
+        while ((index = text.indexOf(word, index)) !== -1) {
+            count++;
+            index += word.length;
+        }
+
+        document.write("The word '" + word + "' occurs " + count + " times in the text.");
+    </script>
+
+
+
+</body>
+</html>

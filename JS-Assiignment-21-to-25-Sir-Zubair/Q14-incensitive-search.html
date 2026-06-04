@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bakery Search</title>
+</head>
+<body>
+  <h2>ABC Bakery Search</h2>
+  
+  <label for="itemInput">What do you want to order?</label>
+  <input type="text" id="itemInput" placeholder="Type an item...">
+  <button onclick="searchItem()">Search</button>
+  
+  <p id="result"></p>
+
+  <script>
+    function searchItem() {
+    
+      let A = ["cake", "apple pie", "cookie", "chips", "patties"];
+      
+      let userInput = document.getElementById("itemInput").value;
+      
+    
+      let searchItem = userInput.toLowerCase();
+      
+
+      let index = A.findIndex(item => item.toLowerCase() === searchItem);
+      
+   
+      if (index !== -1) {
+        document.getElementById("result").innerHTML = 
+          `${userInput} is <b>available</b> at index ${index} in our bakery.`;
+      } else {
+        document.getElementById("result").innerHTML = 
+          `We are sorry. ${userInput} is <b>not available</b> in our bakery.`;
+      }
+    }
+  </script>
+</body>
+</html>
